@@ -7,8 +7,33 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-3" style="position: fixed; top: 45px; left: 45px;">
+      <a class="site_title" href="/">Androme photosite</a>
+      <br />
+      <br />
+      <ul class="nav nav-stacked">
+        <% @albumes.each do |album, id|%>
+            <li role="navigation"><%= link_to "#{album}", "/see/#{album}" %></li>
+        <% end %>
+      </ul>
+      <br />
+      <ul class="nav nav-stacked">
+        <li role="navigation"><%= link_to "Contacts", contacts_path, class: " small" %></li>
+        <li role="navigation"><%= link_to "About", about_path, class: " small" %></li>
+        <li role="navigation"><%= link_to "Фотографии", photos_path, class: " small" %></li>
+        <li role="navigation"><%= link_to "Альбомы", albums_path, class: " small" %></li>
+      </ul>
+    </div>
+    <div class="col-md-8 col-md-offset-3">
+      <%= yield %>
+    </div>
 
-<%= yield %>
+  </div>
+
+</div>
+
 
 </body>
 </html>

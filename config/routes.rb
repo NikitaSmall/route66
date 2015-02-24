@@ -1,4 +1,10 @@
 Route66::Application.routes.draw do
+  get "see/:album" => "landing#index"
+  get "about" => "landing#about"
+  get "contacts" => "landing#contacts"
+
+  root "landing#index"
+
   resources :photos
 
   resources :albums

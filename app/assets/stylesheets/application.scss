@@ -12,3 +12,46 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+li.active{
+  color: #a5e3d4;
+}
+
+ul li a{
+  color: #000000;
+  line-height: 1.4em;
+  text-transform: none;
+  letter-spacing: 1px;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+}
+
+ul li:hover{
+
+}
+
+.site_title{
+  font-size: 47px;
+  line-height: .9em;
+  text-transform: lowercase;
+  letter-spacing: 3px;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 0.0638297872340426em;
+  text-decoration: none;
+  color: #000000;
+}
+
+.site_title:visited{
+  color: #000000;
+}
+
+.site_title:hover{
+  color: #000000;
+  text-decoration: none;
+}
+
+.site_title:active{
+  color: #000000;
+}
