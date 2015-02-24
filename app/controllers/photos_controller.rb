@@ -21,6 +21,7 @@ class PhotosController < ApplicationController
 
   # GET /photos/1/edit
   def edit
+    @albums = get_current_albums
   end
 
   # POST /photos
@@ -43,6 +44,7 @@ class PhotosController < ApplicationController
   # PATCH/PUT /photos/1
   # PATCH/PUT /photos/1.json
   def update
+    @albums = get_current_albums
     respond_to do |format|
       if @photo.update(photo_params)
         format.html { redirect_to @photo, notice: 'Photo was successfully updated.' }

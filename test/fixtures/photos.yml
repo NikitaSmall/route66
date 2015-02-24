@@ -2,6 +2,10 @@
 
 one:
   title: MyString
+  photo_file_name: myphoto.png
+  album_id: 1
 
 two:
   title: MyString
+  photo_file_name: myphoto.png
+  album_id: 1
