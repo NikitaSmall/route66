@@ -1,18 +1,18 @@
 require 'test_helper'
 
-class HomeControllerTest < ActionController::TestCase
+class LandingControllerTest < ActionController::TestCase
   test "should get index" do
-    get "see/:album"
+    get :index
     assert_response :success
   end
 
   test "should get about" do
-    get "about"
+    get :about
     assert_response :success
   end
 
   test "should get contacts" do
-    get "contacts"
+    get :contacts
     assert_response :success
   end
 

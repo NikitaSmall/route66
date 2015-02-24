@@ -3,9 +3,13 @@
 one:
   title: MyString
   photo_file_name: myphoto.png
+  photo_content_type: image/png
+  photo_file_size: 9000
   album_id: 1
 
 two:
   title: MyString
   photo_file_name: myphoto.png
+  photo_content_type: image/png
+  photo_file_size: 9000
   album_id: 1
