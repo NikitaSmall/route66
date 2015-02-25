@@ -1,3 +1,4 @@
+# coding: utf-8
 class PhotosController < ApplicationController
   include CurrentAlbum
   before_action :set_photo, only: [:show, :edit, :update, :destroy]
@@ -5,7 +6,19 @@ class PhotosController < ApplicationController
   # GET /photos
   # GET /photos.json
   def index
-    @photos = Photo.all
+    @albums = get_current_albums
+    @albums['Все альбомы'] = 0
+    @albums = @albums.sort_by {|_key, value| value}.to_h
+
+    if params[:album_id]
+      if params[:album_id].to_f == 0
+        @photos = Photo.all
+      else
+        @photos = Photo.where(album_id: params[:album_id].to_i)
+      end
+    else
+      @photos = Photo.all
+    end
   end
 
   # GET /photos/1

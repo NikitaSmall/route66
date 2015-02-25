@@ -1,4 +1,9 @@
 <h1>Список фотографий</h1>
+<%= form_tag :photo_in_album, class: 'form-inline locale', method: 'get', enforce_utf8: false do %>
+    <%= select_tag 'album_id', options_for_select(@albums, params[:album_id]), onchange: 'this.form.submit()', class: 'form-control' %>
+    <%= submit_tag 'submit' %>
+    <%= javascript_tag "$('.locale input').hide()"%>
+<% end %>
 
 <table class="table table-striped table-responsive">
   <thead>

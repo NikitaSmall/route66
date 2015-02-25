@@ -13,7 +13,11 @@ gem 'mysql2'
 gem 'sass-rails', '~> 4.0.0'
 gem 'bootstrap-sass', '~> 3.3.3'
 
-#use paperclip for image uploads
+# Removes invalid UTF-8 characters from the environment
+gem 'utf8-cleaner'
+gem 'utf8_enforcer_workaround'
+
+# use paperclip for image uploads
 gem 'paperclip'
 
 # Use Uglifier as compressor for JavaScript assets

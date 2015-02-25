@@ -5,7 +5,11 @@ Route66::Application.routes.draw do
 
   root "landing#index"
 
-  resources :photos
+  get "photos/(album/:id)" => "photos#index", as: :photo_in_album
+  resources :photos do
+
+  end
+
 
   resources :albums
 
