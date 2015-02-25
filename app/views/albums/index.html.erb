@@ -1,13 +1,11 @@
-<h1>Listing albums</h1>
+<h1>Список альбомов</h1>
 
-<table>
+<table class="table table-striped table-responsive">
   <thead>
     <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th></th>
-      <th></th>
-      <th></th>
+      <th>Название</th>
+      <th>Описание</th>
+      <th>Операции</th>
     </tr>
   </thead>
 
@@ -16,14 +14,14 @@
       <tr>
         <td><%= album.title %></td>
         <td><%= album.description %></td>
-        <td><%= link_to 'Show', album %></td>
-        <td><%= link_to 'Edit', edit_album_path(album) %></td>
-        <td><%= link_to 'Destroy', album, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td>
+          <%= link_to 'Подробнее', album, class: "btn btn-info" %>
+          <%= link_to 'Редактировать', edit_album_path(album), class: "btn btn-warning" %>
+          <%= link_to 'Удалить!', album, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Album', new_album_path %>
+<%= link_to 'Новый альбом', new_album_path, class: "btn btn-success bottomness" %>

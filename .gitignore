@@ -18,3 +18,5 @@
 # Ignore the IDE
 .idea/*
 .idea/
+
+public/assets/*

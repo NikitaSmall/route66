@@ -55,3 +55,19 @@ ul li:hover{
 .site_title:active{
   color: #000000;
 }
+
+hr {
+  -moz-border-bottom-colors: none;
+  -moz-border-image: none;
+  -moz-border-left-colors: none;
+  -moz-border-right-colors: none;
+  -moz-border-top-colors: none;
+  //border-color: #EEEEEE -moz-use-text-color #FFFFFF;
+  border-style: 1px solid #dddddd;
+  border-width: 1px 0;
+  margin-bottom: 18px;
+}
+
+.bottomness {
+  margin-bottom: 25px;
+}

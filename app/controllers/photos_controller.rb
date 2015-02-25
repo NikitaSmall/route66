@@ -32,7 +32,7 @@ class PhotosController < ApplicationController
 
     respond_to do |format|
       if @photo.save
-        format.html { redirect_to @photo, notice: 'Photo was successfully created.' }
+        format.html { redirect_to photos_url, notice: 'Фотография была успешно добавлена.' }
         format.json { render action: 'show', status: :created, location: @photo }
       else
         format.html { render action: 'new' }
@@ -47,7 +47,7 @@ class PhotosController < ApplicationController
     @albums = get_current_albums
     respond_to do |format|
       if @photo.update(photo_params)
-        format.html { redirect_to @photo, notice: 'Photo was successfully updated.' }
+        format.html { redirect_to photos_url, notice: 'Фотография была успешно обновлена.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
