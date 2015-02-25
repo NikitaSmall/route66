@@ -71,3 +71,15 @@ hr {
 .bottomness {
   margin-bottom: 25px;
 }
+
+.sidebar-nav-fixed {
+  //padding: 9px 0;
+  position:fixed;
+  left:25px;
+  top:45px;
+  //width:250px;
+}
+
+.row > .span-fixed-sidebar {
+  margin-left: 290px;
+}
