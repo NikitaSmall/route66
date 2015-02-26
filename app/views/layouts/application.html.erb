@@ -16,15 +16,15 @@
       <br />
       <ul class="nav nav-stacked">
         <% @albumes.each do |album, id|%>
-            <li role="navigation"><%= link_to "#{album}", "/see/#{album}" %></li>
+            <li <% if @page == album %> class="active" <% end %>role="navigation"><%= link_to "#{album}", "/see/#{album}", class: cp("/see/#{album}") %></li>
         <% end %>
       </ul>
       <br />
       <ul class="nav nav-stacked">
-        <li role="navigation"><%= link_to "Contacts", contacts_path, class: " small" %></li>
-        <li role="navigation"><%= link_to "About", about_path, class: " small" %></li>
-        <li role="navigation"><%= link_to "Фотографии", photos_path, class: " small" %></li>
-        <li role="navigation"><%= link_to "Альбомы", albums_path, class: " small" %></li>
+        <li role="navigation"><%= link_to "Contacts", contacts_path, class: "small #{cp(contacts_path)}" %></li>
+        <li role="navigation"><%= link_to "About", about_path, class: " small #{cp(about_path)}" %></li>
+        <li role="navigation"><%= link_to "Фотографии", photos_path, class: "small #{cp(photos_path)}" %></li>
+        <li role="navigation"><%= link_to "Альбомы", albums_path, class: "small #{cp(albums_path)}" %></li>
       </ul>
     </div>
     </div>

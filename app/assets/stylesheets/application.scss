@@ -13,8 +13,8 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-li.active{
-  color: #a5e3d4;
+.active{
+  color: #4AA48D;
 }
 
 ul li a{
@@ -25,6 +25,10 @@ ul li a{
   font-weight: 400;
   font-style: normal;
   font-size: 16px;
+}
+
+ul li.active a{
+  color: #4AA48D;
 }
 
 ul li:hover{

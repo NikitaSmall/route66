@@ -11,4 +11,14 @@ class ApplicationController < ActionController::Base
     @albumes = get_current_albums
   end
 
+  protected
+  def get_page
+    if params[:album]
+      @page = params[:album]
+    else
+      @page = action_name
+    end
+    @page
+  end
+
 end
