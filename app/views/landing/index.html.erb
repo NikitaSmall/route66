@@ -1,16 +1,16 @@
-<div class="text-center" style="margin-top: 40px;">
+<div class="text-center bottomness" style="margin-top: 40px;">
     <% if @photos %>
       <% if @photos.respond_to?(:each) %>
-        <% @photos.each do |photo| %>
-              <figure>
-                <%= image_tag photo.photo.url, width: "400" %>
-                <figcaption>
-                  <%= photo.title %>
-                </figcaption>
-              </figure>
-        <% end %>
+          <div class="photoset-grid-custom" style="visibility: hidden;">
+            <% @photos.each do |photo| %>
+                    <%= image_tag photo.photo.url, alt: photo.title %>
+            <% end %>
+          </div>
+          <%= render partial: 'landing' %>
       <% else %>
           <%= image_tag @photos.photo.url, height: "550" %>
       <% end %>
     <% end %>
 </div>
+
+

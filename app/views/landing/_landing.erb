@@ -1,0 +1,26 @@
+<script>
+    $("#gallery").justifiedGallery({
+        rowHeight : 300,
+        lastRow : 'nojustify',
+        margins : 5,
+        fixedHeight: true
+    });
+    $('.photoset-grid-custom').photosetGrid({
+        // Set the gutter between columns and rows
+        gutter: '5px',
+        // Manually set the grid layout
+        layout: '<%= @layout %>',
+        // Wrap the images in links
+        highresLinks: false,
+        // Asign a common rel attribute
+        rel: 'print-gallery',
+        width: 'auto',
+
+        onInit: function(){},
+        onComplete: function(){
+            //$('.photoset-row').css('max-height', Math.min($('img').height()));
+            $('.photoset-grid-custom').attr('style', '');
+        }
+    });
+
+</script>
