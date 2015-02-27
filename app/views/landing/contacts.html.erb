@@ -1,2 +1,29 @@
-<h1>Home#contacts</h1>
-<p>Find me in app/views/home/contacts.html.erb</p>
+<br />
+<br />
+<h1>Контакты</h1>
+<p id="notice" class="text-warning"><%= notice %></p>
+<p>Вы можете написать мне прямо на мою почту window@i.ua или воспользоваться формой ниже:</p>
+
+<%= form_tag :send_message, class: "", method: 'post', enforce_utf8: false do%>
+
+    <div class="form-group">
+      <%= label_tag :name, "Имя автора" %>
+      <%= text_field_tag :name, "", class: "form-control", required: true %>
+    </div>
+
+    <div class="form-group">
+        <%= label_tag :title, "Тема письма" %>
+        <%= text_field_tag :title, "", class: "form-control", required: true %>
+    </div>
+
+    <div class="form-group">
+      <%= label_tag :body, "Текст письма" %>
+      <%= text_area_tag :body, "", class: "form-control", required: true %>
+    </div>
+
+    <div class="actions">
+      <%= submit_tag 'Отправить!', class: "btn btn-primary" %>
+    </div>
+
+
+<% end %>

@@ -16,6 +16,11 @@ class LandingController < ApplicationController
   def contacts
   end
 
+  def send_message
+    if ContactsMessage.send_a_mail(params[:name], params[:title], params[:body]).deliver
+      redirect_to :contacts, notice: 'Ваше письмо отправлено.'
+    end
+  end
 
   def get_layout_length(length)
     rows = (length / 2)
