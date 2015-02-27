@@ -1,4 +1,10 @@
 Route66::Application.routes.draw do
+  devise_for :users
+
+  get "login" => "devise/sessions#new"
+  get "logout" => "devise/sessions#new"
+
+
   get "see/:album" => "landing#index"
   get "about" => "landing#about"
   get "contacts" => "landing#contacts", as: :contacts

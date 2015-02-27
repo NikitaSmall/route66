@@ -23,8 +23,12 @@
       <ul class="nav nav-stacked">
         <li role="navigation"><%= link_to "Contacts", contacts_path, class: "small #{cp(contacts_path)}" %></li>
         <li role="navigation"><%= link_to "About", about_path, class: " small #{cp(about_path)}" %></li>
-        <li role="navigation"><%= link_to "Фотографии", photos_path, class: "small #{cp(photos_path)}" %></li>
-        <li role="navigation"><%= link_to "Альбомы", albums_path, class: "small #{cp(albums_path)}" %></li>
+        <% if user_signed_in? %><li role="navigation"><%= link_to "Фотографии", photos_path, class: "small #{cp(photos_path)}" %></li>
+        <li role="navigation"><%= link_to "Альбомы", albums_path, class: "small #{cp(albums_path)}" %>
+            <li role="navigation"><%= link_to "Выйти", destroy_user_session_path, :method => :delete, class: "small #{cp(logout_path)}" %></li>
+        <% else %>
+            <li role="navigation"><%= link_to "Войти", new_user_session_path, class: "small #{cp(logout_path)}" %></li>
+        <% end %>
       </ul>
     </div>
     </div>
