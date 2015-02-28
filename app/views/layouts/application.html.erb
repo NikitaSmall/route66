@@ -24,10 +24,8 @@
         <li role="navigation"><%= link_to "Contacts", contacts_path, class: "small #{cp(contacts_path)}" %></li>
         <li role="navigation"><%= link_to "About", about_path, class: " small #{cp(about_path)}" %></li>
         <% if user_signed_in? %><li role="navigation"><%= link_to "Фотографии", photos_path, class: "small #{cp(photos_path)}" %></li>
-        <li role="navigation"><%= link_to "Альбомы", albums_path, class: "small #{cp(albums_path)}" %>
-            <li role="navigation"><%= link_to "Выйти", destroy_user_session_path, :method => :delete, class: "small #{cp(logout_path)}" %></li>
-        <% else %>
-            <li role="navigation"><%= link_to "Войти", new_user_session_path, class: "small #{cp(logout_path)}" %></li>
+            <li role="navigation"><%= link_to "Альбомы", albums_path, class: "small #{cp(albums_path)}" %>
+            <li role="navigation"><%= link_to "Выйти", destroy_user_session_path, :method => :delete, class: "small" %></li>
         <% end %>
       </ul>
     </div>
@@ -36,6 +34,11 @@
       <%= yield %>
     </div>
 
+  </div>
+  <div class="row-fluid">
+    <div class="col-md-8 col-md-offset-3 text-center bottomness">
+      Created at 2015 by <abbr title="nikitasosnov@yahoo.com">NikitaSmall</abbr> for my friend <abbr title="window@i.ua | +380502471163">Androme</abbr> <%= link_to "©", new_user_session_path, class: "hidden_link" %>
+    </div>
   </div>
 
 </div>
