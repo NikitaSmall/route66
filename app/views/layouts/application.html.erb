@@ -11,7 +11,7 @@
   <div class="row-fluid">
     <div class="col-md-3">
     <div class="col-md-3 sidebar-nav-fixed">
-      <a class="site_title" href="/">Androme photosite</a>
+      <a class="site_title" href="/">Фотограф Андрей</a>
       <br />
       <br />
       <ul class="nav nav-stacked">
@@ -21,8 +21,8 @@
       </ul>
       <br />
       <ul class="nav nav-stacked">
-        <li role="navigation"><%= link_to "Contacts", contacts_path, class: "small #{cp(contacts_path)}" %></li>
-        <li role="navigation"><%= link_to "About", about_path, class: " small #{cp(about_path)}" %></li>
+        <li role="navigation"><%= link_to "Контакты", contacts_path, class: "small #{cp(contacts_path)}" %></li>
+        <li role="navigation"><%= link_to "Обо мне", about_path, class: " small #{cp(about_path)}" %></li>
         <% if user_signed_in? %><li role="navigation"><%= link_to "Фотографии", photos_path, class: "small #{cp(photos_path)}" %></li>
             <li role="navigation"><%= link_to "Альбомы", albums_path, class: "small #{cp(albums_path)}" %>
             <li role="navigation"><%= link_to "Выйти", destroy_user_session_path, :method => :delete, class: "small" %></li>
@@ -37,7 +37,7 @@
   </div>
   <div class="row-fluid">
     <div class="col-md-8 col-md-offset-3 text-center bottomness">
-      Created at 2015 by <abbr title="nikitasosnov@yahoo.com">NikitaSmall</abbr> for my friend <abbr title="window@i.ua | +380502471163">Androme</abbr> <%= link_to "©", new_user_session_path, class: "hidden_link" %>
+      Создано в 2015. От <abbr title="nikitasosnov@yahoo.com">Никиты</abbr> его товарищу <abbr title="window@i.ua | +380502471163">Андрею</abbr> <%= link_to "©", new_user_session_path, class: "hidden_link" %>
     </div>
   </div>
 
