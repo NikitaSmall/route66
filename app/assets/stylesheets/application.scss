@@ -17,8 +17,33 @@
   min-height: 540px;
 }
 
+.sidebar{
+  background-color: #D3F2EC;
+  height: 100%;
+  padding: 0;
+  margin-top: -2.5%;
+  padding-top: 2.5%;
+}
+
+@media screen and (max-width: 992px){
+  .sidebar {
+    display: none;
+  }
+
+  .grid figure {
+    display: block;
+    float: left;
+    margin: 0 1% 10px 1%;
+    cursor: pointer;
+    overflow: hidden;
+    width: 80%;
+  }
+}
+
 .active{
   color: #4AA48D;
+  background-color: #ffffff;
+
 }
 
 ul li a{
