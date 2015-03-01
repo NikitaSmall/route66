@@ -2,8 +2,12 @@ class LandingController < ApplicationController
   def index
     if params[:album]
       album = Album.find_by_title(params[:album])
-      @photos = Photo.where(album_id: album.id)
-      @layout = get_layout_length(@photos.length)
+      if album.nil?
+        @photos = nil
+      else
+        @photos = Photo.where(album_id: album.id)
+        #@layout = get_layout_length(@photos.length)
+      end
     else
       @photos = Photo.first
     end

@@ -1,26 +1,86 @@
 <script>
-    $("#gallery").justifiedGallery({
-        rowHeight : 300,
-        lastRow : 'nojustify',
-        margins : 5,
-        fixedHeight: true
-    });
-    $('.photoset-grid-custom').photosetGrid({
-        // Set the gutter between columns and rows
-        gutter: '5px',
-        // Manually set the grid layout
-        layout: '<%= @layout %>',
-        // Wrap the images in links
-        highresLinks: false,
-        // Asign a common rel attribute
-        rel: 'print-gallery',
-        width: 'auto',
+    $(function() {
 
-        onInit: function(){},
-        onComplete: function(){
-            //$('.photoset-row').css('max-height', Math.min($('img').height()));
-            $('.photoset-grid-custom').attr('style', '');
+        // checks if the bottom of an element is inside the viewport and if there's space for the description
+        // basically this returns false if the description should be shown with sticky trick..
+        // inspired by James Padolsey's snippet (http://remysharp.com/2009/01/26/element-in-view-event-plugin/#comment-127058)
+        $.extend( $.expr[':'], {
+            bottomInViewport : function( el ) {
+                var scrollTop = ( document.documentElement.scrollTop || document.body.scrollTop ),
+                        elOffsetTop = $( el ).offset().top,
+                        elH = $( el ).height(),
+                        descrH = $( el ).find( 'figcaption' ).outerHeight(true),
+                        winH = ( window.innerHeight && window.innerHeight < $( window ).height() ) ? window.innerHeight : $( window ).height();
+
+                return ( elOffsetTop + elH > scrollTop && elOffsetTop + elH < scrollTop + winH ) || ( scrollTop + winH - elOffsetTop < descrH );
+            }
+        });
+
+        var $grid = $('#grid'), $items = $grid.children('figure');
+
+        $grid.imagesLoaded( function() {
+
+            // initialize the masonry plugin
+            $grid.masonry({
+                itemSelector: 'figure'
+            });
+
+            // bind the mouseenter and mouseleave events to the items
+            $items.on( 'mouseenter mouseleave', function( event ) {
+
+                var $item = $( this ), itemWidth = $item.width(),
+                // the figcaption/description element
+                        $description = $item.find( 'figcaption' );
+
+                clearTimeout( $item.data( 'stickytime' ) );
+
+                switch( event.type ) {
+                    case 'mouseenter' :
+
+                        if( !$item.is( ':bottomInViewport' ) ) {
+                            $item.data( 'sticky', true );
+                            changeToFixed( $description, itemWidth );
+                        }
+                        // bind the scroll event to the window while hovering an item
+                        // while scrolling, we check if the description should be rendered or not
+                        $( window ).on( 'scroll', function () {
+                            var inviewport = $item.is( ':bottomInViewport' );
+                            if( !inviewport && !$item.data( 'sticky' ) ) {
+                                $item.data( 'sticky', true );
+                                changeToFixed( $description, itemWidth );
+                            }
+                            else if( inviewport && $item.data( 'sticky' ) ) {
+                                $item.data( 'sticky', false );
+                                resetStyle( $description );
+                            }
+                        } );
+                        break;
+
+                    case 'mouseleave' :
+
+                        // on mouse leave and if the description is sticky, we reset the style
+                        if( $item.data( 'sticky' ) ) {
+                            $item.data( 'sticky', false );
+                            resetStyle( $( this ).find( 'figcaption' ), 200 );
+                        }
+                        $( window ).off( 'scroll' );
+                        break;
+                }
+
+            } );
+
+        });
+
+        function changeToFixed( $description, itemWidth ) {
+            $description.css({ position: 'fixed', width: itemWidth });
         }
-    });
 
+        function resetStyle( $description, delay ) {
+            var stickytime = setTimeout( function() { $description.css({ position: 'absolute', width: '100%'}); }, delay || 0 );
+            $description.parent().data( 'stickytime', stickytime );
+        }
+
+        $('#grid').css('visibility', 'visible');
+
+    });
 </script>

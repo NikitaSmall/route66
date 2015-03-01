@@ -13,6 +13,10 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+.photo-album {
+  min-height: 540px;
+}
+
 .active{
   color: #4AA48D;
 }
@@ -102,3 +106,169 @@ hr {
 .row > .span-fixed-sidebar {
   margin-left: 290px;
 }
+
+.container {
+  width: 100%;
+  position: relative;
+}
+
+.main,
+.container > header {
+  width: 90%;
+  max-width: 835px;
+  margin: 0 auto;
+  position: relative;
+  padding: 0 0 5px 0px
+}
+
+.container > header {
+  padding: 30px 0;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.container > header h1 {
+  font-size: 28px;
+  line-height: 38px;
+  margin: 0;
+  font-weight: 700;
+  color: #555;
+  float: left;
+  text-shadow: 1px 1px 1px rgba(255,255,255,0.5);
+}
+
+.container > header h1 span {
+  display: block;
+  font-size: 18px;
+  font-weight: 300;
+}
+
+.container > header p {
+  float: right;
+  padding: 50px 0 0 0;
+  color: #b9953e;
+  font-weight: 300;
+  text-shadow: 0 1px rgba(255,255,255,0.6);
+}
+
+/* Header Style */
+.codrops-top {
+  line-height: 24px;
+  font-size: 11px;
+  background: #fff;
+  background: rgba(255, 255, 255, 0.5);
+  text-transform: uppercase;
+  z-index: 9999;
+  position: relative;
+  box-shadow: 1px 0px 2px rgba(0,0,0,0.2);
+}
+
+.codrops-top a {
+  padding: 0px 10px;
+  letter-spacing: 1px;
+  color: #333;
+  display: inline-block;
+}
+
+.codrops-top a:hover {
+  background: rgba(255,255,255,0.8);
+  color: #000;
+}
+
+.codrops-top span.right {
+  float: right;
+}
+
+.codrops-top span.right a {
+  float: left;
+  display: block;
+}
+
+/* Demo Buttons Style */
+.codrops-demos {
+  float: right;
+  padding-top: 10px;
+}
+
+.codrops-demos a {
+  display: inline-block;
+  margin: 10px;
+  color: #666;
+  font-weight: 700;
+  line-height: 30px;
+  border-bottom: 4px solid transparent;
+}
+
+.codrops-demos a:hover {
+  color: #000;
+  border-color: #000;
+}
+
+.codrops-demos a.current-demo,
+.codrops-demos a.current-demo:hover {
+  color: #aaa;
+  border-color: #aaa;
+}
+
+.support-note {
+  clear: both;
+}
+
+.support-note span{
+  color: #ac375d;
+  font-size: 16px;
+  display: none;
+  font-weight: bold;
+  text-align: center;
+  padding: 5px 0;
+}
+
+.grid {
+  margin: 30px auto;
+}
+
+.grid figure {
+  display: block;
+  float: left;
+  margin: 0 1% 10px 1%;
+  cursor: pointer;
+  overflow: hidden;
+  width: 45%;
+}
+
+.grid figure img {
+  display: block;
+  width: 100%;
+}
+
+.grid figure figcaption {
+  position: absolute;
+  font-size: 16px;
+  font-weight: 400;
+  left: auto;
+  width: 100%;
+  height: 60px;
+  bottom: -60px;
+  padding: 20px;
+  color: #ddd;
+  //background: #18bcbc;
+  background-color: rgba(24, 188, 188, 0.4);
+  -webkit-font-smoothing: antialiased;
+  -webkit-transition: bottom 0.2s ease;
+  -moz-transition: bottom 0.2s ease-in-out;
+  -ms-transition: bottom 0.2s ease-in-out;
+  -o-transition: bottom 0.2s ease-in-out;
+  transition: bottom 0.2s ease-in-out;
+}
+
+.grid figure figcaption a {
+  color: #fff;
+}
+
+.grid figure figcaption a:hover {
+  color: #ffd468;
+}
+
+.grid figure:hover figcaption {
+  bottom: 0px;
+}
+
