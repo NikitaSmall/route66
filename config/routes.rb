@@ -6,6 +6,7 @@ Route66::Application.routes.draw do
 
 
   get "see/:album" => "landing#index"
+  get "all" => "landing#all"
   get "about" => "landing#about"
   get "contacts" => "landing#contacts", as: :contacts
   post "send_message" => "landing#send_message", as: :send_message

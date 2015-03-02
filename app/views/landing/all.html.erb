@@ -1,0 +1,19 @@
+<div class="text-center bottomness photo-album" style="margin-top: 40px;">
+  <% if @photos %>
+      <% if @photos.respond_to?(:each) %>
+          <section class="main">
+            <div class="grid clearfix" id="grid" style="visibility: hidden;">
+              <% @photos.shuffle.each do |photo| %>
+                  <figure>
+                    <%= image_tag photo.photo.url, alt: photo.title %>
+                    <figcaption>
+                      <%= photo.title %>
+                    </figcaption>
+                  </figure>
+              <% end %>
+            </div>
+          </section>
+          <%= render partial: 'landing' %>
+      <% end %>
+  <% end %>
+</div>

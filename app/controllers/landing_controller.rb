@@ -5,13 +5,17 @@ class LandingController < ApplicationController
       if album.nil?
         @photos = nil
       else
-        @photos = Photo.where(album_id: album.id)
+        @photos = Photo.where(album_id: album.id).order(created_at: :desc)
         #@layout = get_layout_length(@photos.length)
       end
     else
       @photos = Photo.first
     end
 
+  end
+
+  def all
+    @photos = Photo.all.order(created_at: :desc)
   end
 
   def about
