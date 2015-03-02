@@ -6,6 +6,7 @@
   <thead>
     <tr>
       <th>Название</th>
+      <th>Название в адресной строке</th>
       <th>Описание</th>
       <th>Операции</th>
     </tr>
@@ -15,6 +16,7 @@
     <% @albums.each do |album| %>
       <tr>
         <td><%= album.title %></td>
+        <td><%= album.address %></td>
         <td><%= album.description %></td>
         <td>
           <%= link_to 'Подробнее', album, class: "btn btn-info" %>

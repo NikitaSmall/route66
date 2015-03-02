@@ -15,8 +15,8 @@
       <br />
       <br />
       <ul class="nav nav-stacked">
-        <% @albumes.each do |album, id|%>
-            <li <% if @page == album %> class="active" <% end %>role="navigation"><%= link_to "#{album}", "/see/#{album}", class: cp("/see/#{album}") %></li>
+        <% @albumes.each do |album, address|%>
+            <li <% if @page == album %> class="active" <% end %>role="navigation"><%= link_to "#{album}", "/see/#{address}", class: cp("/see/#{address}") %></li>
         <% end %>
       </ul>
       <br />

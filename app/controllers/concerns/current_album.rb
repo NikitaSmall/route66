@@ -9,4 +9,13 @@ module CurrentAlbum extend ActiveSupport::Concern
     @album_names
   end
 
+def get_albums_for_nav
+  albums = Album.all
+  @album_names = Hash.new
+  albums.each do |album|
+    @album_names[album.title] = album.address
+  end
+  @album_names
+end
+
 end

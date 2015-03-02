@@ -5,7 +5,7 @@ Route66::Application.routes.draw do
   get "logout" => "devise/sessions#new"
 
 
-  get "see/:album" => "landing#index"
+  get "see/:address" => "landing#index"
   get "all" => "landing#all", as: :all
   get "about" => "landing#about"
   get "contacts" => "landing#contacts", as: :contacts

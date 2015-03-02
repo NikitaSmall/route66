@@ -1,7 +1,7 @@
 class LandingController < ApplicationController
   def index
-    if params[:album]
-      album = Album.find_by_title(params[:album])
+    if params[:address]
+      album = Album.find_by_address(params[:address])
       if album.nil?
         @photos = nil
       else

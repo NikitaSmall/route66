@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
 
   protected
   def get_albums
-    @albumes = get_current_albums
+    @albumes = get_albums_for_nav
   end
 
   protected
