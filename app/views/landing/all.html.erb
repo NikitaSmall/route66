@@ -7,7 +7,7 @@
                   <figure>
                     <%= image_tag photo.photo.url, alt: photo.title %>
                     <figcaption>
-                      <%= photo.title %>
+                      <%= photo.album.title %>: <%= photo.title %>
                     </figcaption>
                   </figure>
               <% end %>

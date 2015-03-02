@@ -13,9 +13,12 @@
                 <% end %>
               </div>
           </section>
+          <div class="text-center">
+            <%= link_to "Показать все фото", :all, class: "btn btn-info" %>
+          </div>
           <%= render partial: 'landing' %>
       <% else %>
-          <%= image_tag @photos.photo.url, height: "550" %>
+          <%= link_to (image_tag @photos.photo.url, height: "550"), :all %>
       <% end %>
     <% end %>
 </div>
