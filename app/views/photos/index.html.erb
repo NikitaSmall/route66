@@ -18,17 +18,19 @@
   </thead>
 
   <tbody>
-    <% @photos.each do |photo| %>
-      <tr>
-        <td><%= image_tag photo.photo.url, width: "150" %></td>
-        <td><%= photo.title %></td>
-        <td><%= photo.album.title %></td>
-        <td>
-          <%= link_to 'Подробнее', photo, class: "btn btn-info" %>
-          <%= link_to 'Редактировать', edit_photo_path(photo), class: "btn btn-warning" %>
-          <%= link_to 'Удалить!', photo, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
-      </tr>
-    <% end %>
+      <% if @photos %>
+        <% @photos.each do |photo| %>
+          <tr>
+            <td><%= image_tag photo.photo.url, width: "150" %></td>
+            <td><%= photo.title %></td>
+            <td><%= photo.album.title %></td>
+            <td>
+              <%= link_to 'Подробнее', photo, class: "btn btn-info" %>
+              <%= link_to 'Редактировать', edit_photo_path(photo), class: "btn btn-warning" %>
+              <%= link_to 'Удалить!', photo, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
+          </tr>
+        <% end %>
+      <% end %>
   </tbody>
 </table>
 

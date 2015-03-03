@@ -22,7 +22,7 @@ class PhotosControllerTest < ActionController::TestCase
                              photo_file_size: @photo.photo_file_size, photo_content_type: @photo.photo_content_type }
     end
 
-    assert_redirected_to photo_path(assigns(:photo))
+    assert_redirected_to photos_path
   end
 
   test "should show photo" do
@@ -37,7 +37,7 @@ class PhotosControllerTest < ActionController::TestCase
 
   test "should update photo" do
     patch :update, id: @photo, photo: { title: @photo.title }
-    assert_redirected_to photo_path(assigns(:photo))
+    assert_redirected_to photos_path
   end
 
   test "should destroy photo" do

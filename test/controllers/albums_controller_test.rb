@@ -21,7 +21,7 @@ class AlbumsControllerTest < ActionController::TestCase
       post :create, album: { description: @album.description, title: @album.title }
     end
 
-    assert_redirected_to album_path(assigns(:album))
+    assert_redirected_to albums_path
   end
 
   test "should show album" do
@@ -36,7 +36,7 @@ class AlbumsControllerTest < ActionController::TestCase
 
   test "should update album" do
     patch :update, id: @album, album: { description: @album.description, title: @album.title }
-    assert_redirected_to album_path(assigns(:album))
+    assert_redirected_to albums_path
   end
 
   test "should destroy album" do
