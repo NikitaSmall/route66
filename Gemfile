@@ -22,6 +22,8 @@ gem 'utf8_enforcer_workaround'
 
 # use paperclip for image uploads
 gem 'paperclip'
+# gem to hold photos at dropbox
+gem 'paperclip-dropbox', '>= 1.1.7'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
