@@ -23,14 +23,19 @@ $(document).ready(function(){
         string+= e.which.toString();
 
         if((string.indexOf('38384040373937396566') + 1) && first == 1) {
-            $('#easter').animate({bottom:'0px'}, {duration:500});
+            $('body').append("<div id='easter-2' style='position: fixed; right: 50%; bottom: 105%;'>Фин! Сражайся честно, несносный мальчишка!</div>");
+            $('#easter').animate({bottom:'0px'}, {duration:600});
+            $('#easter-2').animate({bottom:'-50px'}, {duration:5000});
             $('#easter').animate({bottom:'-10px'}, {duration:300});
             $('#easter').animate({bottom:'0px'}, {duration:300});
             $('#easter').animate({bottom:'-15px'}, {duration:300});
             $('#easter').animate({bottom:'-5px'}, {duration:300});
             $('#easter').animate({bottom:'-10px'}, {duration:300});
             $('#easter').animate({bottom:'0px'}, {duration:300});
-            $('#easter').animate({bottom:'-250px'}, {duration:400});
+            $('#easter').animate({bottom:'-10px'}, {duration:300});
+            $('#easter').animate({bottom:'0px'}, {duration:300});
+            $('#easter').animate({bottom:'-30px'}, {duration:300});
+            $('#easter').animate({bottom:'-250px'}, {duration:500});
             first = 0;
         }
     });
