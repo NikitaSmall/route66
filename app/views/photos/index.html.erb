@@ -33,7 +33,12 @@
       <% end %>
   </tbody>
 </table>
-
+<div class="text-center">
+    <%= will_paginate @photos, renderer: BootstrapPagination::Rails %>
+</div>
+<br />
+<br />
 <%= link_to 'Добавить фото', new_photo_path, class: "btn btn-success bottomness" %>
+<br />
 
 <br />

@@ -27,5 +27,9 @@
     <% end %>
   </tbody>
 </table>
-
+<div class="text-center">
+  <%= will_paginate @albums, renderer: BootstrapPagination::Rails %>
+</div>
+<br />
+<br />
 <%= link_to 'Новый альбом', new_album_path, class: "btn btn-success bottomness" %>

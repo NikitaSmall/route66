@@ -23,6 +23,9 @@ gem 'utf8_enforcer_workaround'
 # use paperclip for image uploads
 gem 'paperclip'
 
+# use for pretty pagination
+gem 'will_paginate-bootstrap'
+
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 
