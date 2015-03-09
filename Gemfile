@@ -26,6 +26,9 @@ gem 'paperclip'
 # use for pretty pagination
 gem 'will_paginate-bootstrap'
 
+# use it to easy create meta-tags
+gem 'meta-tags', require: 'meta_tags'
+
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 
