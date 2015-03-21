@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 gem 'rails', '4.0.0'
 
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+#gem 'sqlite3'
 
 # Use mysql as the database for Active Record
 gem 'mysql2'
@@ -22,6 +22,8 @@ gem 'utf8_enforcer_workaround'
 
 # use paperclip for image uploads
 gem 'paperclip'
+
+gem 'aws-sdk'
 
 # use for pretty pagination
 gem 'will_paginate-bootstrap'

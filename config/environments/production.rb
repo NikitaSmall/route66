@@ -86,6 +86,15 @@ Route66::Application.configure do
           "2371757350f",
       enable_starttls_auto: true
   }
+
+  config.paperclip_defaults = {
+      :storage => :s3,
+      :s3_credentials => {
+          :bucket => 'route67',
+          :access_key_id => 'AKIAIYDIPBOEM6L7DSGQ',
+          :secret_access_key => '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'
+      }
+  }
   # Disable automatic flushing of the log to improve performance.
   # config.autoflush_log = false
 
