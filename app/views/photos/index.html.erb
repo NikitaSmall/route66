@@ -1,6 +1,6 @@
 <h1>Список фотографий</h1>
 <%= form_tag :photo_in_album, class: 'form-inline locale', method: 'get', enforce_utf8: false do %>
-    <%= select_tag 'album_id', options_for_select(@albums, params[:album_id]), onchange: 'this.form.submit()', class: 'form-control' %>
+    <%= select_tag 'album_id', options_for_select(@albums.map { |s| [ s.title, s.id ] }, params[:album_id]), onchange: 'this.form.submit()', class: 'form-control' %>
     <%= submit_tag 'submit' %>
     <%= javascript_tag "$('.locale input').hide()"%>
 <% end %>
@@ -34,7 +34,7 @@
   </tbody>
 </table>
 <div class="text-center">
-    <%# will_paginate @photos, renderer: BootstrapPagination::Rails %>
+    <%= will_paginate @photos, renderer: BootstrapPagination::Rails %>
 </div>
 <br />
 <br />

@@ -34,7 +34,7 @@ test:
 production:
   adapter: mysql2
   encoding: utf8
-  database: heroku_app_db1
+  database: heroku_app_db
   pool: 5
   username: ux5gikg7xgijhpv5
   password: 8au67de07i54a8ne

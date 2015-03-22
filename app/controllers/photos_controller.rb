@@ -7,19 +7,19 @@ class PhotosController < ApplicationController
   # GET /photos
   # GET /photos.json
   def index
-    #@albums = get_current_albums
+    @albums = Album.all
     #@albums['Все альбомы'] = 0
     #@albums = @albums.sort_by {|_key, value| value}.to_h
 
-    #if params[:album_id]
-      #if params[:album_id].to_f == 0
-        #@photos = Photo.paginate(:page => params[:page], :per_page => 5)
-      #else
-        #@photos = Photo.where(album_id: params[:album_id].to_i).paginate(:page => params[:page], :per_page => 5)
-      #end
-    #else
-      @photos = Photo.all
-   # end
+    if params[:album_id]
+      if params[:album_id].to_f == 0
+        @photos = Photo.paginate(:page => params[:page], :per_page => 5)
+      else
+        @photos = Photo.where(album_id: params[:album_id].to_i).paginate(:page => params[:page], :per_page => 5)
+      end
+    else
+      @photos = Photo.paginate(:page => params[:page], :per_page => 5)
+    end
   end
 
   # GET /photos/1
