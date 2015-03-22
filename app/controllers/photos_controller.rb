@@ -18,7 +18,7 @@ class PhotosController < ApplicationController
         #@photos = Photo.where(album_id: params[:album_id].to_i).paginate(:page => params[:page], :per_page => 5)
       #end
     #else
-      @photos = Photo.paginate(:page => params[:page], :per_page => 5)
+      @photos = Photo.all
    # end
   end
 
