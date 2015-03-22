@@ -24,6 +24,8 @@ gem 'utf8_enforcer_workaround'
 gem 'paperclip'
 
 gem 'aws-sdk'
+gem 'fog'
+gem 'figaro'
 
 # use for pretty pagination
 gem 'will_paginate-bootstrap'
